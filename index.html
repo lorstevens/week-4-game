@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<meta charset="UTF-8">
+
+	<title>Crystal Game</title>
+</head>
+<body>
+
+	<h1> <p>Click on a crystal to add points to your score. </p>
+	<p>Match the random number to win.<p></h1>
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-4">
+		        <div class="panel panel-default">
+		        	<div class="panel-heading">
+		            	<h1 class="panel-title">Random Number</h1>
+		             </div>
+
+		             <div class="panel-body">
+		                 <h3 id="computernumber"></h3>
+		             </div>     
+		        </div>
+		    </div>
+			<div class="col-lg-4">
+		        <div class="panel panel-default">
+		        	<div class="panel-heading">
+		            	<h1 class="panel-title">Your Score:</h1>
+		             </div>
+
+		             <div class="panel-body">
+		                 <h3 id="yourguesses"></h3>
+		             </div>     
+		        </div>
+		    </div>
+
+		 </div> 
+
+		<div class= "row">
+			<div class="col-lg-4">
+			        <div class="panel panel-default">
+			        	<div class="panel-heading"></div>
+
+			             <div class="panel-body">
+			                 <h3 id="wins">Wins:</h3>
+			                 <h3 id="losses">Losses:</h3>
+			             </div>     
+			        </div>
+			    </div>
+		</div>
+
+		<div class="crystals">
+			<img src="./assets/images/green_crystal.jpeg" id="green">
+			<img src="./assets/images/pink_crystal.jpg" id="pink">
+			<img src="./assets/images/red_crystal.jpg" id="red">
+			<img src="./assets/images/gray_crystal.jpg" id="gray">
+		</div>
+
+
+
+
+	</div>
+
+
+
+
+
+	
+</body>
+<script src="./assets/javascript/game.js"></script>
+</html>
