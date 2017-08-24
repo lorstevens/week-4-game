@@ -13,92 +13,44 @@ var randomNumber = Math.floor((Math.random() * 100) + 19);
 	$("#computernumber").html(randomNumber);
 
 
-//Assign a random value between 1-12 to each image
-
-var green = Math.floor((Math.random() * 12) + 1);
-	$("#green").html(green);
-var pink = Math.floor((Math.random() * 12) + 1);
-	$("#pink").html(pink);
-var red = Math.floor((Math.random() * 12) + 1);
-	$("#red").html(red);
-var gray = Math.floor((Math.random() * 12) + 1);
-	$("#gray").html(gray);
-
-	console.log("green " + green);
-	console.log("pink " + pink);
-	console.log("red " + red);
-	console.log("gray " + gray);
 
 
-//Add the on click function to the crystals
 
+//add click function on the aCrystal class
 
-$("#green").on("click", function() {
-       // $("#yourguesses").html(green);
-       totalScore= totalScore + green;
+	$(".aCrystal").on("click", function() {
+       var crystalRandomNumber = Math.floor((Math.random() * 12) + 1);
+       console.log(crystalRandomNumber);
+       totalScore = totalScore + crystalRandomNumber;
     	console.log("New userTotal= " + totalScore);
     	$("#yourguesses").html(totalScore);
 
-    	// playGame ();
-      });
 
-$("#pink").on("click", function() {
-       // $("#yourguesses").html(pink);
-       totalScore= totalScore + pink;
-    	console.log("New userTotal= " + totalScore);
-    	$("#yourguesses").html(totalScore);
+	    	if (totalScore == randomNumber) {
+				winCounter++;
+				$("#wins").html("Wins: " + winCounter);
+				alert("Hurray! You win!");
+				reset();
+			}
 
-    	// playGame ();
-      });
+			else if (totalScore > randomNumber) {
+				lossCounter++;
+				$("#losses").html("Losses: " + lossCounter);
+				alert("Yikes! You lost!");
+				reset();
+			}		
 
-$("#red").on("click", function() {
-       // $("#yourguesses").html(red);
-       totalScore= totalScore + red;
-    	console.log("New userTotal= " + totalScore);
-    	$("#yourguesses").html(totalScore);
-
-    	// playGame ();
-      });
-
-$("#gray").on("click", function() {
-       // $("#yourguesses").html(gray);
-       totalScore= totalScore + gray;
-    	console.log("New userTotal= " + totalScore);
-    	$("#yourguesses").html(totalScore);
-
-    	// playGame ();
-      });
+    });
 
 
-//create reset function
+
+//create reset function. When reset function is called, total score resets and random numbers change.
 var reset = function (){
-	totalScore = 0;
 
-var green = Math.floor((Math.random() * 12) + 1);
-var pink = Math.floor((Math.random() * 12) + 1);
-var red = Math.floor((Math.random() * 12) + 1);
-var gray = Math.floor((Math.random() * 12) + 1);
+	totalScore= 0;
+	randomNumber = Math.floor((Math.random() * 100) + 19);
+		$("#computernumber").html(randomNumber);
 
-}
-
-//create function if user wins
-
-var playGame = function (){
-	if (totalScore == randomNumber) {
-		winCounter++
-		$("wins").html(winCounter);
-		alert("Hurray! You win!");
-	}
-
-	else if (totalScore > randomNumber) {
-		lossCounter++
-		$("losses").html(lossCounter);
-		alert("Yikes! You lost!");
-	}
-
-	else {
-		reset();
-	}
 }
 
 
