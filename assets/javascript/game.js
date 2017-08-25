@@ -51,6 +51,10 @@ var reset = function (){
 	randomNumber = Math.floor((Math.random() * 100) + 19);
 		$("#computernumber").html(randomNumber);
 
+
 }
 
+
+//The crystals have a random number EACH time clicked. 
+//I need to tie a random number to each cystral, then reset only once the game is reset
 
